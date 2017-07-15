@@ -27,6 +27,7 @@ public class Test2_2_7 {
             alloc();
         }
         long e = System.currentTimeMillis();
+
         System.out.println(e-b);
     }
 }

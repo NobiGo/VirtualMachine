@@ -10,7 +10,7 @@ public class Test4_4_3 {
         //user 为强引用
         User user = new User(1, "geym");
         //softReference 为软引用
-        //通过强引用，建立弱引用
+        //通过强引用，建立软引用
         SoftReference<User> softReference = new SoftReference<User>(user);
         //去除对象的强引用
         user = null;

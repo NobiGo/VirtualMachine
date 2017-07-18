@@ -1,11 +1,13 @@
 package dx.com.chapter.four;
 
-import java.lang.ref.SoftReference;
+import java.lang.ref.WeakReference;
 
 /**
  * Created by dx on 2017/7/16.
  */
-public class Test4_4_3 {
+public class Test4_4_5 {
+
+
     public static class User{
 
         public int id;
@@ -21,23 +23,17 @@ public class Test4_4_3 {
         }
     }
 
-
     public static void main(String[] args) {
         //user 为强引用
         User user = new User(1,"geym");
-        //softReference 为软引用
-        //通过强引用，建立软引用
-        SoftReference<User> softReference = new SoftReference<User>(user);
-        //去除对象的强引用
+        //通过强引用，建立弱引用
+        WeakReference<User> weakReference = new WeakReference<User>(user);
         user = null;
 
-        System.out.println(softReference.get());
+        System.out.println(weakReference.get());
         System.gc();
-        System.out.println("After GC:");
-        System.out.println(softReference.get());
-
-        byte[] b = new byte[1024*925*7];
-        System.gc();
-        System.out.println(softReference.get());
+        //不管内存足够与否都会进行回收
+        System.out.println("After GC：");
+        System.out.println(weakReference.get());
     }
 }

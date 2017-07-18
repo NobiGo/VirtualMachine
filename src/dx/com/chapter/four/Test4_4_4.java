@@ -1,6 +1,5 @@
 package dx.com.chapter.four;
 
-import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
 
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.SoftReference;
